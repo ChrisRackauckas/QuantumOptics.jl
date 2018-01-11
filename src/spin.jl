@@ -21,11 +21,11 @@ type SpinBasis <: Basis
     shape::Vector{Int}
     spinnumber::Rational{Int}
     function SpinBasis(spinnumber::Rational{Int})
-        n = @compat numerator(spinnumber)
-        d = @compat denominator(spinnumber)
+        n = numerator(spinnumber)
+        d = denominator(spinnumber)
         @assert d==2 || d==1
         @assert n > 0
-        N = @compat numerator(spinnumber*2 + 1)
+        N = numerator(spinnumber*2 + 1)
         new([N], spinnumber)
     end
 end
